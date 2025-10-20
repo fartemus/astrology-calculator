@@ -45,7 +45,7 @@ descriptor_list = [
 ]
 
 def astrology_calculator(month=None, day=None, city=None, state=None, hour=None, minute=None, am=None):
-    rng = np.random.default_rng(12345)
+    rng = np.random.default_rng()
     rints = rng.integers(low=0, high=31, size=11)
     rints2 = rng.integers(low=0, high=12, size=11)
 
