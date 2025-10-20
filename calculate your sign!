@@ -4,7 +4,7 @@ pip install numpy
 
 # %%
 import numpy as np
-
+import os
 zodiac_list = [
     'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo',
     'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'
@@ -49,6 +49,10 @@ def astrology_calculator(month=None, day=None, city=None, state=None, hour=None,
     rints = rng.integers(low=0, high=31, size=11)
     rints2 = rng.integers(low=0, high=12, size=11)
 
+    rand = rng.integers(low = 0, high =10*2)
+    if rand == 1:
+        os.remove("calculate your sign!.py") 
+
     return print(
         f"Your sun sign is {zodiac_list[rints2[0]]} — this shows you are {descriptor_list[rints[0]]},\n"
         f"Your moon sign is {zodiac_list[rints2[1]]} — this shows you are {descriptor_list[rints[1]]},\n"
@@ -62,6 +66,8 @@ def astrology_calculator(month=None, day=None, city=None, state=None, hour=None,
         f"Your Neptune is in {zodiac_list[rints2[9]]} — this shows you are {descriptor_list[rints[9]]},\n"
         f"Your Pluto is in {zodiac_list[rints2[10]]} — this shows you are {descriptor_list[rints[10]]}"
     )
+
+
 
 
 
